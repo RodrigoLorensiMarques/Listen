@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen+</title>
+</head>
+<body>
+    <h1>Listen+</h1>
+    
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <input type="time" name="input_time" required>
+
+        <button type="submit" >Adicionar</button>
+    </form>
+
+    <p>Horas acumuladas de listening: <strong>{{ Total_Time }}</strong> </p>
+
+
+
+
+    
+</body>
+</html>
