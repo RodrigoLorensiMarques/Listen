@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.db import connection
 
 def Read_TotalTime():
@@ -27,7 +27,7 @@ def Update_TotalTime(input_time):
         limit 1;
                        """)
         
-def Verify_Date():
+def Verify_Date_Today():
     Time_Now = datetime.now()
     Date = Time_Now.date()
     Date_Now = str(Date)
@@ -56,8 +56,31 @@ def Insert_Date(Date_Input):
             print("Data já exite na datebase.")                
 
 
+def Count_Date():
+    with connection.cursor() as cursor:
+        cursor.execute(
+        """
+        Select count(date_time)from english; 
+
+        """)
+        Valor = cursor.fetchone()
+        return Valor[0]
 
 
+def Verify_TimeMeta(Total_Time):
+    if isinstance(Total_Time, str):
+        h, m= map(int, Total_Time.split(':'))
+        Total_Time = timedelta(hours=h, minutes=m,)
+
+    Meta = timedelta(hours=100) 
+
+    TimeMeta = Total_Time >= Meta
+
+    print(f"Meta de 100 horas atingida? {TimeMeta}")
+    return TimeMeta
 
 
-
+def Very_MetaDays(TotalDays):
+    DaysMeta = TotalDays>=100
+    print(f"Meta de 100 dias atingida? {DaysMeta}")
+    return DaysMeta

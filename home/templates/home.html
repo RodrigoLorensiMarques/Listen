@@ -16,7 +16,11 @@
     </form>
 
     <p>Horas acumuladas de listening: <strong>{{ Total_Time }}</strong> </p>
-    <p>Dias intensivos: </p>
+    <p>Dias intensivos: <strong>{{ Total_Days }}</strong>  </p>
+
+    {% if Meta_Time %}
+    <p>{{ Meta_Days }}</p>
+    {% endif %}
 
 
 
