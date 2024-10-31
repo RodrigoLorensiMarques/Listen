@@ -1,4 +1,5 @@
 
+from datetime import datetime
 from django.db import connection
 
 def Read_TotalTime():
@@ -25,3 +26,38 @@ def Update_TotalTime(input_time):
         SET total_time = ADDTIME(total_time, '{input_time}:00')
         limit 1;
                        """)
+        
+def Verify_Date():
+    Time_Now = datetime.now()
+    Date = Time_Now.date()
+    Date_Now = str(Date)
+    print(f"Data de hoje: {Date_Now}")
+    return Date_Now
+
+
+
+def Insert_Date(Date_Input):
+        with connection.cursor() as cursor:
+            cursor.execute(f"""
+            SELECT DATE_TIME FROM ENGLISH
+            WHERE DATE_TIME='{Date_Input}';
+                                    """) 
+            Valor= cursor.fetchall()
+
+        if not Valor:
+            with connection.cursor() as cursor:   
+                cursor.execute(f"""
+                INSERT INTO english (date_time)
+                VALUES ('{Date_Input}');                
+                                                """)
+                print("Data inserida na datebase.")
+            
+        else:
+            print("Data já exite na datebase.")                
+
+
+
+
+
+
+
