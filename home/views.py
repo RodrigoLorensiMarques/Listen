@@ -9,10 +9,10 @@ def home(request):
     Meta_Days = Very_MetaDays(Total_Days)
 
     if Meta_Time:
-        context['Meta_Time'] = 'Parabéns! Você atingiu a meta de 100 horas de listening!'
+        context['Meta_Time'] = ' '
 
     if Meta_Days:
-        context['Meta_Days'] = 'Parabéns! Você atingiu a meta de 100 dias!'
+        context['Meta_Days'] = ' '
     
 
     if request.method == 'POST':

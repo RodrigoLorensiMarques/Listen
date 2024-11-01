@@ -40,8 +40,8 @@ body{
     width: 100%;
     text-align: center;
     font-size: 25px;
-
 }
+
 
 .form{
     display: flex;
@@ -59,6 +59,13 @@ body{
     font-size: 30px;
 }
 
+.form button:hover{
+    background-color: rgb(121, 187, 250);
+    transition-duration: 0.2s;
+}
+
+
+
 
 p{
     font-size: 20px;
@@ -69,7 +76,7 @@ p{
 }
 
 footer{
-    margin-top: 200px;
+    margin-top: 250px;
     text-align: center;
 }
 

@@ -32,16 +32,23 @@
         <p>Dias intensivos: <strong>{{ Total_Days }}</strong>  </p>
     </div>   
 
-    {% if Meta_Time %}
-    <p>{{ Meta_Time }}</p>
-    {% endif %}
+    <div class="Metas">
+        {% if Meta_Time %}
+            <div class="Meta_Time">Parabéns!🎉<br>Você atingiu a meta de <strong>100 horas</strong> de lessening!</div>
+        {% endif %}
+        <br><br>
 
-    {% if Meta_Days %}
-    <p>{{ Meta_Days }}</p>
-    {% endif %}
+
+        {% if Meta_Days %}
+            <div class="Meta_Days">Parabéns!🎉<br>Você atingiu a meta de <strong>100 dias</strong> de lessening!</div>
+        {% endif %}
+    </div>
 
     <footer>
-        <a href="#">Histórico</a>
+        <div class="rodape">
+            <a href="#">Histórico</a>
+        </div>
+        
     </footer>
 
 
