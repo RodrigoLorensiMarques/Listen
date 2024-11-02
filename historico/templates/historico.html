@@ -8,7 +8,8 @@
 <body>
     <h1>Histórico</h1>
 
-    {% for date, time in Historico_Now %}
+    {% for date, time, time_now  in Historico_Now %}
+        <td>{{ time_now }}</td> 
         <td>{{ date }}</td> 
         <td>{{ time }}</td> <br><br>
     {% endfor %}

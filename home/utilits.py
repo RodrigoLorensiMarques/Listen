@@ -1,4 +1,5 @@
 
+import time
 from datetime import datetime, timedelta
 from django.db import connection
 
@@ -86,11 +87,18 @@ def Very_MetaDays(TotalDays):
     return DaysMeta
 
 
-def Insert_historico(Input_Time,Date_Today):
+def Insert_historico(Input_Time,Date_Today,Time_Now,):
     with connection.cursor() as cursor:
         cursor.execute(
             f"""
-        INSERT INTO historico (Input_Time,date_input)
-        VALUES ('{Input_Time}','{Date_Today}')
+        INSERT INTO historico (Input_Time,date_input,time_now)
+        VALUES ('{Input_Time}','{Date_Today}','{Time_Now}')
 
             """)
+        
+
+def Verify_Time_Now():
+    Time_Struct= time.localtime()
+    Time_Now= time.strftime("%H:%M", Time_Struct)
+    print(f"Horário do input: {Time_Now}")
+    return Time_Now

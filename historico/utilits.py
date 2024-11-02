@@ -10,11 +10,13 @@ def Read_Historico():
         result= cursor.fetchall()
 
         Historico = []
-        for time, date in result:
+        for time, date, time_now in result:
+            Time_Now = str(time_now)
             Date_Str = str(date).replace('-', '/')
             Date_Hist = "/".join(Date_Str.split("/")[::-1])
             Time_Hist = str(time)
-            Historico.append((Date_Hist, Time_Hist))
+
+            Historico.append((Date_Hist, Time_Hist, Time_Now))
 
         print (Historico)
         return Historico
