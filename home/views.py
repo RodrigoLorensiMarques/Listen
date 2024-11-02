@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .utilits import Read_TotalTime, Update_TotalTime, Verify_Date_Today, Insert_Date, Count_Date, Verify_TimeMeta,Very_MetaDays
+from .utilits import Read_TotalTime, Update_TotalTime, Verify_Date_Today, Insert_Date, Count_Date, Verify_TimeMeta,Very_MetaDays,Insert_historico
 
 def home(request):
     context={}
@@ -23,6 +23,8 @@ def home(request):
 
         Date_Today = Verify_Date_Today()
         Insert_Date(Date_Today)
+
+        Insert_historico(Input_Time,Date_Today)
 
         Total_Time=Read_TotalTime()
         return redirect('home')

@@ -84,3 +84,13 @@ def Very_MetaDays(TotalDays):
     DaysMeta = TotalDays>=100
     print(f"Meta de 100 dias atingida? {DaysMeta}")
     return DaysMeta
+
+
+def Insert_historico(Input_Time,Date_Today):
+    with connection.cursor() as cursor:
+        cursor.execute(
+            f"""
+        INSERT INTO historico (Input_Time,date_input)
+        VALUES ('{Input_Time}','{Date_Today}')
+
+            """)
