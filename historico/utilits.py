@@ -1,22 +1,27 @@
+import locale
 from django.db import connection
+
+import locale
 
 def Read_Historico():
     with connection.cursor() as cursor:
         cursor.execute(
             """
-            SELECT *FROM historico
-            """)
+            SELECT * FROM historico
+            """
+        )
         
-        result= cursor.fetchall()
+        result = cursor.fetchall()
 
         Historico = []
-        for time, date, time_now in result:
-            Time_Now = str(time_now)
-            Date_Str = str(date).replace('-', '/')
-            Date_Hist = "/".join(Date_Str.split("/")[::-1])
-            Time_Hist = str(time)
+        for time_hist, date_rec, time_rec in result:
+            Time_Record = f"{time_rec.hour:02}:{time_rec.minute:02}"
+            Time_Hist = f"{time_hist.hour:02}:{time_hist.minute:02}"
 
-            Historico.append((Date_Hist, Time_Hist, Time_Now))
+            locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
+            Extensive_Date = date_rec.strftime("%d de %B de %Y")
 
-        print (Historico)
+            Historico.append((Extensive_Date, Time_Hist, Time_Record))
+
+        print(Historico)
         return Historico[::-1]
