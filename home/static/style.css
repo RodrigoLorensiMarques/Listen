@@ -1,4 +1,7 @@
-
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
 
 body{
@@ -72,15 +75,14 @@ p{
 }
 
 .controle{
-    margin-bottom: 150px;
+    margin-bottom: 30px;
 }
 
 footer {
     text-align: center;
-    position: absolute;
-    bottom: 0;
-    width: 300px;
+    width: 100%;
     height: 2rem;
+    margin-top: auto;
   }
 
   footer a{
