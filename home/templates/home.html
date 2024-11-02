@@ -28,8 +28,8 @@
     </form>
 
     <div class="controle">
-        <p>Horas acumuladas: <strong>{{ Total_Time }}</strong> </p>
-        <p>Dias intensivos: <strong>{{ Total_Days }}</strong>  </p>
+        <p>Horas acumuladas: <strong class="Total_Time">{{ Total_Time }}</strong> </p>
+        <p>Dias intensivos: <strong class="Total_Days">{{ Total_Days }}</strong>  </p>
     </div>   
 
     <div class="Metas">
@@ -42,14 +42,15 @@
         {% if Meta_Days %}
             <div class="Meta_Days">Parabéns!🎉<br>Você atingiu a meta de <strong>100 dias</strong> de lessening!</div>
         {% endif %}
+
+
     </div>
 
     <footer>
-        <div class="rodape">
-            <a href="{% url 'historico' %}">Histórico</a>
-        </div>
-        
+        <a href="{% url 'historico' %}">Histórico</a>
     </footer>
+
+
 
 
 

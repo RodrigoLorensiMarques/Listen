@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Histórico</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'historico.css' %}">
 </head>
 <body>
-    <h1>Histórico</h1>
+    <div class="Principal">
+        <h1>Histórico</h1>
 
-    {% for date, time, time_now  in Historico_Now %}
-        <td>{{ time_now }}</td> 
-        <td>{{ date }}</td> 
-        <td>{{ time }}</td> <br><br>
-    {% endfor %}
+
+        {% for date, time, time_now  in Historico_Now %}
+        <table>
+            <tr>
+                <td class="hour">{{time_now}}</td>
+                <td class="date">{{date}}</td> 
+                <td class="time">+{{time}}</td> <br>
+                </tr>   
+        </table>
+        {% endfor %}
+        <br>
+        <footer><a href="{% url 'home' %}">Home</a></footer>  
+
+    </div>
+
+
 </body>
 </html>

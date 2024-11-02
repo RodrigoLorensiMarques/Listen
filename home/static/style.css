@@ -75,11 +75,47 @@ p{
     margin-bottom: 150px;
 }
 
-footer{
-    margin-top: 250px;
+footer {
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    height: 2rem;
+  }
+
+  footer a{
+    color: rgb(158, 158, 158);
+  }
+
+
+
+.Metas {
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: Anim_1 1s ease forwards;
 }
 
-footer a{
-    color: rgb(158, 158, 158);
+.Total_Time {
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: Anim_1 1s ease forwards;
 }
+
+
+.Total_Days {
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: Anim_1 1s ease forwards;
+}
+
+
+
+
+@keyframes Anim_1 {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

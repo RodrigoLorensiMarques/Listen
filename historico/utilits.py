@@ -19,4 +19,4 @@ def Read_Historico():
             Historico.append((Date_Hist, Time_Hist, Time_Now))
 
         print (Historico)
-        return Historico
+        return Historico[::-1]
