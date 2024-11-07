@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    font-family: "Inter", sans-serif;
+    align-items: center;
+}
+
+.Principal {
+    margin-top: 10%;
+    width: 325px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Principal h1 {
+    font-size: 100px;
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.form {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+.form input {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+.form button {
+    padding: 0;
+    width: 40%;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(137, 198, 255, 1);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.form button:hover {
+    background-color: rgb(121, 187, 250);
+    transition-duration: 0.2s;
+}
+
+p {
+    font-size: 20px;
+}
+
+.controle {
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    height: 2rem;
+    margin-top: auto;
+}
+
+footer a {
+    color: rgb(158, 158, 158);
+}
+
+.Metas {
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: Anim_1 1s ease forwards;
+}
+
+.Total_Time {
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: Anim_1 1s ease forwards;
+}
+
+.Total_Days {
+    opacity: 0; 
+    transform: translateY(20px);
+    animation: Anim_1 1s ease forwards;
+}
+
+@keyframes Anim_1 {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
